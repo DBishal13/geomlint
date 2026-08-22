@@ -1,0 +1,12 @@
+{
+  "type": "FeatureCollection",
+  "crs": { "type": "name", "properties": { "name": "EPSG:26910" } },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "site-b",
+      "properties": { "name": "declared UTM 10N — mismatched with legacy_crs_a.geojson" },
+      "geometry": { "type": "Point", "coordinates": [552341.7, 4180962.3] }
+    }
+  ]
+}

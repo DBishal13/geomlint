@@ -1,0 +1,12 @@
+{
+  "type": "FeatureCollection",
+  "crs": { "type": "name", "properties": { "name": "EPSG:4326" } },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "site-a",
+      "properties": { "name": "declared WGS84" },
+      "geometry": { "type": "Point", "coordinates": [-122.42, 37.77] }
+    }
+  ]
+}

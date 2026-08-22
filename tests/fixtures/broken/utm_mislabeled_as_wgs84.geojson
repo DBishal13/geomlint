@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "pole-1042",
+      "properties": { "name": "utility pole, actually UTM 10N meters, no CRS declared" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [552341.7, 4180962.3]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "pole-1043",
+      "properties": { "name": "same problem" },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [552389.1, 4181005.8]
+      }
+    }
+  ]
+}

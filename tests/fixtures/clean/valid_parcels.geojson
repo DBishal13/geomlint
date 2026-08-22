@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "parcel-clean-1",
+      "properties": { "name": "clean polygon" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-122.43, 37.76], [-122.42, 37.76], [-122.42, 37.77], [-122.43, 37.77], [-122.43, 37.76]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parcel-clean-2",
+      "properties": { "name": "clean point" },
+      "geometry": { "type": "Point", "coordinates": [-122.41, 37.78] }
+    }
+  ]
+}

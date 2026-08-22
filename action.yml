@@ -1,0 +1,62 @@
+name: 'geomlint'
+description: 'Validity, topology, and CRS-sanity checks for vector geospatial data.'
+branding:
+  icon: 'map-pin'
+  color: 'green'
+
+inputs:
+  path:
+    description: 'File(s)/directory to scan (space-separated for multiple).'
+    required: false
+    default: '.'
+  fail-on:
+    description: 'Exit non-zero if any issue at or above this severity is found (error|warning|info).'
+    required: false
+    default: 'error'
+  format:
+    description: 'Output format (table|json).'
+    required: false
+    default: 'table'
+  config:
+    description: 'Path to a .geomlint.toml config file. Omit to let geomlint auto-discover one.'
+    required: false
+    default: ''
+  extras:
+    description: 'Comma-separated optional extras to install, e.g. "formats" for Shapefile/GPKG support.'
+    required: false
+    default: ''
+  ref:
+    description: 'geomlint git ref (tag/branch/commit) to install. Defaults to the latest on the default branch.'
+    required: false
+    default: ''
+
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install geomlint
+      shell: bash
+      run: |
+        set -euo pipefail
+        pkg="geomlint"
+        if [ -n "${{ inputs.extras }}" ]; then
+          pkg="geomlint[${{ inputs.extras }}]"
+        fi
+        source="git+https://github.com/DBishal13/geomlint.git"
+        if [ -n "${{ inputs.ref }}" ]; then
+          source="${source}@${{ inputs.ref }}"
+        fi
+        pip install "${pkg} @ ${source}"
+
+    - name: Run geomlint check
+      shell: bash
+      run: |
+        set -euo pipefail
+        args=(check ${{ inputs.path }} --fail-on "${{ inputs.fail-on }}" --format "${{ inputs.format }}")
+        if [ -n "${{ inputs.config }}" ]; then
+          args+=(--config "${{ inputs.config }}")
+        fi
+        geomlint "${args[@]}"

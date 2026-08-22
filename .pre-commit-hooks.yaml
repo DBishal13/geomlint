@@ -1,0 +1,8 @@
+- id: geomlint
+  name: geomlint
+  description: Validity, topology, and CRS-sanity checks for vector geospatial data.
+  entry: geomlint check
+  language: python
+  files: \.(geojson|json|shp|gpkg)$
+  pass_filenames: true
+  require_serial: true

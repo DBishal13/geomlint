@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "dup-01",
+      "properties": { "name": "first feature using this id" },
+      "geometry": { "type": "Point", "coordinates": [40.0, 40.0] }
+    },
+    {
+      "type": "Feature",
+      "id": "dup-01",
+      "properties": { "name": "second feature reusing the same id" },
+      "geometry": { "type": "Point", "coordinates": [40.1, 40.1] }
+    },
+    {
+      "type": "Feature",
+      "id": "backwards-ring",
+      "properties": { "name": "exterior ring wound clockwise, violates RFC 7946" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[50, 50], [50, 51], [51, 51], [51, 50], [50, 50]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "high-precision-point",
+      "properties": { "name": "fake precision from a float round-trip" },
+      "geometry": { "type": "Point", "coordinates": [60.123456789012, 10.123456789012] }
+    },
+    {
+      "type": "Feature",
+      "id": "antimeridian-crosser",
+      "properties": { "name": "line crossing +/-180 without being split" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[179.9, 10.0], [-179.9, 10.0]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "structural-control",
+      "properties": { "name": "clean control feature, no structural issues" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[70, 70], [71, 70], [71, 71], [70, 71], [70, 70]]]
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "parcel-001",
+      "properties": { "name": "self-intersecting bowtie" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[0, 0], [1, 1], [1, 0], [0, 1], [0, 0]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parcel-002",
+      "properties": { "name": "collapsed / zero-area polygon" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[10, 10], [10, 10], [10, 10], [10, 10]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parcel-003",
+      "properties": { "name": "duplicate consecutive vertices" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[20, 20], [21, 20], [21, 20], [21, 21], [20, 21], [20, 20]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "parcel-004",
+      "properties": { "name": "perfectly fine polygon, control case" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[30, 30], [31, 30], [31, 31], [30, 31], [30, 30]]]
+      }
+    }
+  ]
+}
