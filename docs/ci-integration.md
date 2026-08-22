@@ -1,6 +1,6 @@
 # CI integration
 
-geomlint isn't published to PyPI yet, so both integrations below install straight from this repo's git history — that also means you can pin to any tag, branch, or commit, not just released versions.
+Both integrations below install straight from this repo's git history rather than PyPI — that means you can pin to any tag, branch, or commit, not just released versions, and pick up a fix before it's cut into a release.
 
 ## GitHub Actions
 
@@ -41,7 +41,7 @@ The hook runs `geomlint check` against whatever `.geojson`, `.json`, `.shp`, or 
 There's no dependency on GitHub Actions specifically — the underlying contract is just a `pip install` and an exit code:
 
 ```bash
-pip install "geomlint @ git+https://github.com/DBishal13/geomlint.git"
+pip install geomlint
 geomlint check ./data --fail-on error
 ```
 

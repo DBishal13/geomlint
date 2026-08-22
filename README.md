@@ -2,6 +2,7 @@
 
 [![test](https://github.com/DBishal13/geomlint/actions/workflows/test.yml/badge.svg)](https://github.com/DBishal13/geomlint/actions/workflows/test.yml)
 [![docs](https://github.com/DBishal13/geomlint/actions/workflows/docs.yml/badge.svg)](https://DBishal13.github.io/geomlint/)
+[![PyPI](https://img.shields.io/pypi/v/geomlint.svg)](https://pypi.org/project/geomlint/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml)
 
@@ -39,11 +40,9 @@ geomlint is that check suite, aimed at the failure modes that show up constantly
 
 ## Install
 
-Not on PyPI yet — install straight from GitHub:
-
 ```bash
-pip install "geomlint @ git+https://github.com/DBishal13/geomlint.git"              # GeoJSON only
-pip install "geomlint[formats] @ git+https://github.com/DBishal13/geomlint.git"     # + Shapefile/GPKG, via pyogrio
+pip install geomlint              # GeoJSON only
+pip install geomlint[formats]     # + Shapefile/GPKG, via pyogrio
 ```
 
 Working on this repo instead:

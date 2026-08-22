@@ -2,11 +2,9 @@
 
 ## Install
 
-Not on PyPI yet — install straight from GitHub:
-
 ```bash
-pip install "geomlint @ git+https://github.com/DBishal13/geomlint.git"              # GeoJSON only
-pip install "geomlint[formats] @ git+https://github.com/DBishal13/geomlint.git"     # + Shapefile/GPKG, via pyogrio
+pip install geomlint              # GeoJSON only
+pip install geomlint[formats]     # + Shapefile/GPKG, via pyogrio
 ```
 
 The base install has no system dependencies — `shapely` and `pyproj` ship self-contained wheels. The `formats` extra pulls in `pyogrio`, which bundles its own GDAL inside the wheel, so you still don't need anything installed at the OS level to read Shapefile/GPKG.
