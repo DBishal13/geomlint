@@ -30,7 +30,8 @@ geomlint check [-h] [--format {table,json}] [--fail-on {error,warning,info}]
 | `1` | At least one issue at or above `--fail-on` was found — the normal "found something" outcome. |
 | `2` | Usage problem: no matching files under the given path(s), a `--config` file that doesn't exist, a malformed config file, or (with `--drift`) the not-yet-implemented error. |
 
-`0`/`1` is the pair a CI step should actually branch on; `2` means geomlint couldn't run the check at all, which is worth treating as a separate failure mode (e.g. a bad path in the pipeline config) rather than "issues found."
+!!! tip "Distinguish `2` from `1` in your CI step"
+    `0`/`1` is the pair a CI step should actually branch on; `2` means geomlint couldn't run the check at all, which is worth treating as a separate failure mode (e.g. a bad path in the pipeline config) rather than "issues found."
 
 ## Examples
 

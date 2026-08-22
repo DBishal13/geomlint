@@ -10,7 +10,8 @@ Drop a `.geomlint.toml` file anywhere at or above the path you scan, or add a `[
 geomlint check ./data --config custom.toml
 ```
 
-An explicit `--config` path must exist, or geomlint exits with an error rather than silently falling back to defaults.
+!!! warning "Explicit paths are strict"
+    An explicit `--config` path must exist, or geomlint exits with an error rather than silently falling back to defaults.
 
 ## Keys
 
@@ -32,7 +33,8 @@ exclude = ["**/scratch/**"]
 | `severity_overrides` | table of string → string | `{}` | Remap a check code's severity to `"error"`, `"warning"`, or `"info"`. |
 | `exclude` | list of glob strings | `[]` | Files matching any pattern (matched against the scanned path, e.g. `tests/fixtures/broken/legacy_crs_a.geojson`) are skipped entirely — no issues, and excluded from cross-file checks like `mismatched-crs-across-files`. |
 
-An unknown key, or an invalid severity value in `severity_overrides`, is a hard error at startup — geomlint won't silently ignore a typo in your config.
+!!! danger "Typos fail loudly"
+    An unknown key, or an invalid severity value in `severity_overrides`, is a hard error at startup — geomlint won't silently ignore a typo in your config.
 
 ## Precedence
 

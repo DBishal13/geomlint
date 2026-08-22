@@ -4,29 +4,45 @@ site_url: https://DBishal13.github.io/geomlint/
 repo_url: https://github.com/DBishal13/geomlint
 repo_name: DBishal13/geomlint
 edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Bishal Dhungana — MIT licensed
 
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
+    logo: material/map-marker-radius-outline
+  favicon: assets/favicon.svg
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: teal
+      accent: teal
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
     - navigation.top
     - navigation.sections
+    - navigation.footer
     - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
     - search.suggest
+    - search.highlight
 
 nav:
   - Home: index.md
@@ -38,6 +54,8 @@ nav:
   - Changelog: changelog.md
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
   - admonition
   - pymdownx.details
   - pymdownx.superfences
@@ -46,9 +64,22 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: ["."]
       check_paths: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - tables
   - toc:
       permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DBishal13/geomlint
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/geomlint/
 
 plugins:
   - search

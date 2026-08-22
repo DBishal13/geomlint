@@ -1,0 +1,89 @@
+/* Landing-page hero */
+.geomlint-hero {
+  margin: -0.8rem -0.8rem 2rem;
+  padding: 3.2rem 1.6rem 2.8rem;
+  border-radius: 0 0 0.6rem 0.6rem;
+  text-align: center;
+  background: linear-gradient(135deg, #00695c 0%, #00897b 55%, #26a69a 100%);
+  color: #fff;
+}
+
+.geomlint-hero h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem;
+}
+
+.geomlint-hero p.tagline {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 40rem;
+  margin: 0 auto 1.6rem;
+}
+
+.geomlint-hero .md-button {
+  margin: 0.2rem 0.4rem;
+}
+
+.geomlint-hero .md-button--primary {
+  background-color: #fff;
+  color: #00695c;
+  border-color: #fff;
+}
+
+.geomlint-hero .md-button--primary:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #00695c;
+}
+
+.geomlint-hero .md-button:not(.md-button--primary) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.geomlint-hero .md-button:not(.md-button--primary):hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: #fff;
+}
+
+/* Feature grid cards: slightly livelier hover than the Material default */
+.md-typeset .grid.cards > ul > li {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.md-typeset .grid.cards > ul > li > :first-child svg,
+.md-typeset .grid.cards .twemoji {
+  color: #00897b;
+}
+
+/* Slightly rounder, calmer code blocks */
+.md-typeset pre > code {
+  border-radius: 0.3rem;
+}
+
+/* Severity badges, used in the checks reference table */
+.sev {
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  border-radius: 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.sev-error { background: #ffebee; color: #c62828; }
+.sev-warning { background: #fff8e1; color: #e65100; }
+.sev-info { background: #e3f2fd; color: #1565c0; }
+
+[data-md-color-scheme="slate"] .sev-error { background: #3d1414; color: #ff8a80; }
+[data-md-color-scheme="slate"] .sev-warning { background: #3a2c08; color: #ffcc80; }
+[data-md-color-scheme="slate"] .sev-info { background: #0d2740; color: #82b1ff; }
