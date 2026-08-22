@@ -27,6 +27,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
 formats = ["pyogrio>=0.7"]
+docs = ["mkdocs-material>=9.5"]
 
 [project.scripts]
 geomlint = "geomlint.cli:main"

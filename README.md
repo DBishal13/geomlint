@@ -1,8 +1,11 @@
 # geomlint
 
 [![test](https://github.com/DBishal13/geomlint/actions/workflows/test.yml/badge.svg)](https://github.com/DBishal13/geomlint/actions/workflows/test.yml)
+[![docs](https://github.com/DBishal13/geomlint/actions/workflows/docs.yml/badge.svg)](https://DBishal13.github.io/geomlint/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](pyproject.toml)
+
+**[Full documentation →](https://DBishal13.github.io/geomlint/)**
 
 **Monte Carlo for geometry columns.** Continuous validity, topology, and CRS-sanity checks for vector geospatial data — the checks every mainstream data-observability tool (Monte Carlo, Anomalo, Great Expectations) skips because it treats a geometry column as an opaque blob.
 
