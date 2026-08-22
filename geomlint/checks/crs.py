@@ -37,10 +37,13 @@ def check_crs(loaded: LoadedFile, config: Config | None = None) -> list[Issue]:
                       f"declared CRS '{loaded.declared_crs}' does not resolve "
                       f"via pyproj — check the authority code/name")
             )
-    elif loaded.format != "geojson":
+    elif loaded.format != "geojson" and not loaded.parse_errors:
         # GeoJSON has no CRS by spec (RFC 7946 mandates WGS84), so absence is
         # normal there. Shapefile/GPKG almost always carry one — a missing
         # one here means we can't sanity-check coordinates against anything.
+        # Skip this when the file failed to load at all (e.g. the optional
+        # 'formats' extra isn't installed) — "no CRS found" is misleading
+        # noise on top of the real problem, which is that nothing was read.
         label = _FORMAT_LABELS.get(loaded.format, loaded.format)
         issues.append(
             Issue(loaded.path, "-", Severity.WARNING, "missing-crs",

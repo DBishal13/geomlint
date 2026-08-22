@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from geomlint.io import load_file
+from geomlint.io import LoadedFile, load_file
 from geomlint.checks.geometry import check_geometry
 from geomlint.checks.crs import check_crs, check_crs_consistency
 from geomlint.checks.structure import check_duplicate_feature_ids
@@ -58,3 +58,16 @@ def test_structural_defects_flagged():
     assert "excessive-coordinate-precision" in by_feature["high-precision-point"]
     assert "antimeridian-crossing-suspected" in by_feature["antimeridian-crosser"]
     assert "structural-control" not in by_feature  # clean control feature, no issues
+
+
+def test_unreadable_shapefile_does_not_also_claim_missing_crs():
+    # A shapefile that failed to load at all (e.g. the optional 'formats'
+    # extra isn't installed) shouldn't ALSO get a "missing-crs" warning on
+    # top of the real error — that's misleading noise, not a second finding.
+    lf = LoadedFile(
+        "parcels.shp", None, features=[],
+        parse_errors=["reading .shp files requires the optional 'formats' extra"],
+        format="shapefile",
+    )
+    issues = check_crs(lf)
+    assert "missing-crs" not in _codes(issues)

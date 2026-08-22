@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- **Fix**: checking a Shapefile/GPKG without the optional `formats` extra installed no longer also reports a spurious `missing-crs` warning alongside the real "install `geomlint[formats]`" error — the file was never read, so there was nothing to be missing a CRS.
+
 ## 0.1.0
 
 Initial release.

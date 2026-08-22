@@ -6,4 +6,4 @@ polygons, duplicate vertices, missing/mismatched CRS declarations, and
 coordinates that are quietly out of bounds for the CRS they claim.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
